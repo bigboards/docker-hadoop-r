@@ -13,7 +13,7 @@ RUN codename=$(lsb_release -c -s) && \
 	apt-get update && apt-get install -y r-base r-base-dev
 
 # install R libraries
-RUN R -e 'install.packages(c("ggplot2","caret","tidyr","stringr","caretEnsemble","party","devtools","randomForest","ada","doMC","evaluate","formatR","highr","markdown","yaml","htmltools","caTools","bitops","knitr","rmarkdown","ROCR","gplots","dplyr","plyr","pROC","e1071","gbm"), repos="http://cran.freestatistics.org/", dependencies=NA,clean=TRUE)'  && \
+RUN R -e 'install.packages(c("ggplot2","caret","tidyr","stringr","caretEnsemble","party","devtools","randomForest","ada","doMC","evaluate","formatR","highr","markdown","yaml","htmltools","caTools","bitops","knitr","rmarkdown","ROCR","gplots","dplyr","plyr","pROC","e1071","gbm","shiny"), repos="http://cran.freestatistics.org/", dependencies=NA,clean=TRUE)'  && \
 	R -e 'library("devtools"); install_github("mbojan/alluvial")' && \
 	R -e 'update.packages(ask=FALSE,repos="http://cran.freestatistics.org/")'
 		
